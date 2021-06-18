@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 /**
  * main - Prints a text to in the standard error
  *
@@ -7,6 +6,6 @@
  */
 int main(void)
 {
-system("echo and that piece of art is useful\" - Dora Korpar, 2015-10-1");
+  write(1,"and that piece of art is useful\" - Dora Korpar, 2015-10-1\n",58);
 return (1);
 }
