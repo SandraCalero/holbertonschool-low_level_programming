@@ -11,6 +11,8 @@ for (num1 = 48; num1 <= 57; num1++)
 {
 for (num2 = 48; num2 <= 56; num2++)
 {
+if (num1 == 48 && num2 == 48 || num1 > 48)
+{
 for (num3 = 48; num3 <= 57; num3++)
 {
 for (num4 = 49; num4 <= 57; num4++)
@@ -25,6 +27,7 @@ if ((num1 < 57 && num2 <= 56) || (num1 == 57 && num2 < 56))
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
