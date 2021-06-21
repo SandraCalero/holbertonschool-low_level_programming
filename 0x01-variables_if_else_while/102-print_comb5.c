@@ -24,7 +24,11 @@ putchar(num2);
 putchar(' ');
 putchar(num3);
 putchar(num4);
-if ((num1 < 57 && num2 <= 56) || (num1 == 57 && num2 < 56))
+if (num2 == 56 && num1 == 57)
+{
+num4++;
+}
+else
 {
 putchar(',');
 putchar(' ');
