@@ -9,7 +9,7 @@ int main(void)
 int num1, num2, num3, num4, sum1, sum2;
 for (num1 = 48; num1 <= 57; num1++)
 {
-for (num2 = 48; num2 <= 56; num2++)
+for (num2 = 48; num2 <= 57; num2++)
 {
 sum1 = num1 * 100 + num2;
 for (num3 = 48; num3 <= 57; num3++)
