@@ -1,3 +1,3 @@
 # C - Debugging
 
-## 0. Multiple mains
+This directory is for practice Debugging
