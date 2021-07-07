@@ -1,9 +1,26 @@
 #include "holberton.h"
 
 /**
- * _strstr - locates a substring.
+ * print_diagsums - prints the sum of the two diagonals of a square
  *
- * @haystack: a pointer to a string
- * @needle: substring in the string haystack
- * Return:  a pointer to the beginning of the located substring
+ * @a: a pointer to an array
+ * @size: size of the array
+ * Return: Nothing
  */
+void print_diagsums(int *a, int size)
+{
+	int i;
+	int sumDiag1 = 0;
+	int sumDiag2 = 0;
+
+	for (i = 0; i < (size * size); i = (i + size + 1))
+	{
+		sumDiag1 = sumDiag1 + a[i];
+		printf("%d, ", sumDiag1);
+	}
+	for (i = size - 1; i < (size * size - 1); i = (i + size - 1))
+	{
+		sumDiag2 = sumDiag2 + a[i];
+		printf("%d\n", sumDiag2);
+	}
+}
