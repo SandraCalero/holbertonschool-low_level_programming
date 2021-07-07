@@ -1,9 +1,24 @@
 #include "holberton.h"
 
 /**
- * _strstr - locates a substring.
+ * print_chessboard - prints the chessboard.
  *
- * @haystack: a pointer to a string
- * @needle: substring in the string haystack
- * Return:  a pointer to the beginning of the located substring
+ * @a: a pointer to an array
+ * Return: Nothing
  */
+void print_chessboard(char (*a)[8])
+{
+	int i, j;
+
+	for (i = 0 ; i < 8 ; i++)
+	{
+		for (j = 0 ; j < 8 ; j++)
+			if (j == 7)
+			{
+				_putchar(a[i][j]);
+				_putchar('\n');
+			}
+			else
+				putchar(a[i][j]);
+	}
+}
