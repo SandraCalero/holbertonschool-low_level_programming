@@ -4,7 +4,7 @@
  *
  * @nmemb: number of elements of an array
  * @size: number of bytes of each element
- * Return:  NULL if nmemb or size = 0 or if it fails - success a pointer
+ * Return:  NULL if nmemb or size 0 or if it fails. success a pointer
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptr = malloc(nmemb * size);
+	ptr = malloc(size * nmemb);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0 ; i < nmemb ; i++)
