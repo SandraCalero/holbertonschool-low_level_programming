@@ -6,7 +6,7 @@
  * @age: Age of the dog
  * @owner: Name of the owner
  *
- * Description: Longer description
+ * Description:  Define the most important data of a dog
  */
 struct dog
 {
