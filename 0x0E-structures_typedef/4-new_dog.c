@@ -31,6 +31,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *d;
 	int sizeName, sizeOwner;
 
+	if (name == NULL || owner == NULL)
+	{
+		return (NULL);
+	}
 	for (sizeName = 0 ; name[sizeName] != '\0' ; sizeName++)
 		;
 	for (sizeOwner = 0 ; owner[sizeOwner] != '\0' ; sizeOwner++)
