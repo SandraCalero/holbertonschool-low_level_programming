@@ -3,6 +3,16 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * struct td - Struct type of data
+ * @c: letter that receives the function
+ * @f: The function associated
+ */
+typedef struct td
+{
+	char *c;
+	void (*f)();
+} td;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
