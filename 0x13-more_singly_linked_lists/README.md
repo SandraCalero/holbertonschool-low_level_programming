@@ -855,3 +855,15 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * GitHub repository: holbertonschool-low_level_programming
 * Directory: 0x13-more_singly_linked_lists
 * File: 10-delete_nodeint.c
+
+## Authors
+
+This README.md file was written by:
+
+Mateo Garcia - [twitter](https://twitter.com/mateog91) - [linkedin](https://www.linkedin.com/in/mateog91/)
+
+Sandra Calero - [twitter](https://twitter.com/SandraC59631923) - [linkedin](https://www.linkedin.com/in/sandra-liliana-calero/)
+
+**However all the coding files were individually developed.**
+
+Project for [Holberton School](https://www.holbertonschool.com/)
