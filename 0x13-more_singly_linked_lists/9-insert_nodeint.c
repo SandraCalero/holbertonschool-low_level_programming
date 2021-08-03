@@ -30,7 +30,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new_node;
 		return (new_node);
 	}
-	while (prev_node->next != NULL)
+	while (prev_node != NULL)
 	{
 		if (count == (idx - 1))
 		{
