@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
- * add_node - adds a new node at the beginning of a list_t list.
+ * insert_nodeint_at_index - inserts a new node at a given position.
  * @head: Pointer to a pointer that points to an element of a list.
- * @str: Pointer to a string that must be duplicaded.
+ * @idx: The index of the list where the new node should be added. Starts at 0.
+ * @n: Integer as a data in a node.
  *
  * Return: The address of the new element, or NULL if it failed.
  */
@@ -31,7 +32,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	while (prev_node->next != NULL)
 	{
-		if (count == (idx-1))
+		if (count == (idx - 1))
 		{
 			new_node->next = prev_node->next;
 			prev_node->next = new_node;
@@ -40,5 +41,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		count++;
 		prev_node = prev_node->next;
 	}
-	return(NULL);
+	return (NULL);
 }
