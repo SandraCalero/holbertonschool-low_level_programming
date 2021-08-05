@@ -5,7 +5,6 @@
 - Start to look for the right source of information without too much help
 
 ### 0. Print list
-*mandatory*
 
 Write a function that prints all the elements of a listint_t list.
 
@@ -91,7 +90,6 @@ julien@ubuntu:~/0x12. Singly linked lists$
 * File: 0-print_listint.c
 
 ### 1. List length
-*mandatory*
 
 Write a function that returns the number of elements in a linked listint_t list.
 
@@ -146,7 +144,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 1-listint_len.c
 
 ### 2. Add node
-*mandatory*
 
 Write a function that adds a new node at the beginning of a listint_t list.
 
@@ -203,7 +200,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 2-add_nodeint.c
 
 ### 3. Add node at the end
-*mandatory*
 
 Write a function that adds a new node at the end of a listint_t list.
 
@@ -261,7 +257,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 3-add_nodeint_end.c
 
 ### 4. Free list
-*mandatory*
 
 Write a function that frees a listint_t list.
 
@@ -333,7 +328,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 4-free_listint.c
 
 ### 5. Free
-*mandatory*
 
 Write a function that frees a listint_t list.
 
@@ -407,7 +401,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 5-free_listint2.c
 
 ### 6. Pop
-mandatory
+
 Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
 
 * Prototype: int pop_listint(listint_t **head);
@@ -500,8 +494,8 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * GitHub repository: holbertonschool-low_level_programming
 * Directory: 0x13-more_singly_linked_lists
 * File: 6-pop_listint.c
+
 ### 7. Get node at index
-*mandatory*
 
 Write a function that returns the nth node of a listint_t linked list.
 
@@ -573,7 +567,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 7-get_nodeint.c
 
 ### 8. Sum list
-*mandatory*
 
 Write a function that returns the sum of all the data (n) of a listint_t linked list.
 
@@ -626,7 +619,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * File: 8-sum_listint.c
 
 ### 9. Insert
-*mandatory*
 
 Write a function that inserts a new node at a given position.
 
@@ -698,7 +690,6 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * Directory: 0x13-more_singly_linked_lists
 * File: 9-insert_nodeint.c
 ### 10. Delete at index
-*mandatory*
 
 Write a function that deletes the node at index index of a listint_t linked list.
 
@@ -856,14 +847,93 @@ julien@ubuntu:~/0x13. More singly linked lists$
 * Directory: 0x13-more_singly_linked_lists
 * File: 10-delete_nodeint.c
 
-## Authors
+### 11. Reverse list
 
-This README.md file was written by:
+Write a function that reverses a listint_t linked list.
 
-Mateo Garcia - [twitter](https://twitter.com/mateog91) - [linkedin](https://www.linkedin.com/in/mateog91/)
+* Prototype: listint_t *reverse_listint(listint_t **head);
+* Returns: a pointer to the first node of the reversed list
+* You are not allowed to use more than 1 loop.
+* You are not allowed to use malloc, free or arrays
+* You can only declare a maximum of two variables in your function
+
+```bash
+julien@ubuntu:~/0x13. More singly linked lists$ cat 100-main.c
+```
+```c
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    listint_t *head;
+
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    reverse_listint(&head);
+    print_listint(head);    
+    free_listint2(&head);
+    return (0);
+}
+```
+```bash
+julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 100-reverse_listint.c -o l
+julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./l 
+==3117== Memcheck, a memory error detector
+==3117== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3117== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3117== Command: ./l
+==3117== 
+0
+1
+2
+3
+4
+98
+402
+1024
+1024
+402
+98
+4
+3
+2
+1
+0
+==3117== 
+==3117== HEAP SUMMARY:
+==3117==     in use at exit: 0 bytes in 0 blocks
+==3117==   total heap usage: 9 allocs, 9 frees, 1,152 bytes allocated
+==3117== 
+==3117== All heap blocks were freed -- no leaks are possible
+==3117== 
+==3117== For counts of detected and suppressed errors, rerun with: -v
+==3117== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+julien@ubuntu:~/0x13. More singly linked lists$ 
+```
+**Repo:**
+
+* GitHub repository: holbertonschool-low_level_programming
+* Directory: 0x13-more_singly_linked_lists
+* File: 100-reverse_listint.c
+
+## Author
 
 Sandra Calero - [twitter](https://twitter.com/SandraC59631923) - [linkedin](https://www.linkedin.com/in/sandra-liliana-calero/)
-
-**However all the coding files were individually developed.**
 
 Project for [Holberton School](https://www.holbertonschool.com/)
