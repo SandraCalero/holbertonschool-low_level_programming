@@ -26,16 +26,18 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99); }
-	read_return = read(file_from, buff, 1024);
-	if (read_return == -1)
+	while ((read_return = read(file_from, buff, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98); }
-	write_return = write(file_to, buff, read_return);
-	if (write_return == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99); }
+		if (read_return == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98); }
+		write_return = write(file_to, buff, read_return);
+		if (write_return == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99); }
+	}
 	close_return_from = close(file_from);
 	if (close_return_from == -1)
 	{
@@ -46,5 +48,4 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100); }
-	return (0);
-}
+	return (0); }
