@@ -35,12 +35,22 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
+	hash_node_t *new_node, *current;
 	unsigned long int index;
 
 	if (ht == NULL || key == NULL || strlen(key) <= 0 || value == NULL)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
+	current = ht->array[index];
+	while (current != NULL)
+	{
+		if (strcmp(key, current->key) == 0)
+		{
+			current->value = strdup(value);
+			return (1);
+		}
+		current = current->next;
+	}
 	new_node = add_node(&ht->array[index], key, value);
 	if (new_node == NULL)
 		return (0);
