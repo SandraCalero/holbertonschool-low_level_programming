@@ -7,10 +7,10 @@
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	int i;
+	unsigned long int i;
 	hash_node_t *next_node;
 
-	for (i = 0; i < (int)ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		while (ht->array[i] != NULL)
 		{
