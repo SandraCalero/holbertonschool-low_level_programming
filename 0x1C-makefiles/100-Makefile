@@ -1,11 +1,10 @@
-# .PHONY: it is where we define all the targets that are not files. make will run its recipe
+# .PHONY is where we define all the targets that are not files. make will run its recipe
 # regardless of whether a file with that name exists or what its last modification time is.
 
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
